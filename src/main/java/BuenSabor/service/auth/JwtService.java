@@ -47,6 +47,7 @@ public class JwtService {
                 .getExpiration();
         return expiration.before(new Date());
     }
+
     public Map<String, Object> generateTokenWithExpiration(UserDetails user) {
         Date expirationDate = new Date(System.currentTimeMillis() + EXPIRATION_TIME);
         String token = Jwts.builder()
